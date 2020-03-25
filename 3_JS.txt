@@ -1,0 +1,16 @@
+var c = {
+  'b': 3,
+  'c': function() {
+    var cThis = this;
+     window.setTimeout(
+        function() {
+          //this.d(); // this - в данном случае объект window
+          cThis.d();  //использовать заранее сохраненный объект c
+        }, 4);
+     },
+  'd': function() {
+     alert(this.b);
+  }
+};
+ 
+c.c();
